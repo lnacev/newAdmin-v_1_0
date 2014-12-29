@@ -1,0 +1,55 @@
+              <div class="table-list-wrap">
+                  <div class="table-list-top">
+                      <h1>Investice</h1>
+                      <!--<ul class="table-list-tabs">
+                            <li class="selected"><a title="Zveřejněné" href="#">Zveřejněné</a></li>
+                            <li><a title="Nezveřejněné" href="#">Nezveřejněné</a></li>
+                      </ul>-->
+                  </div>
+                  <?php
+//require_once "inc/db_conn.php";
+//require_once('inc/dbplibc.php');
+
+$db = new db_connection(SQL_HOST,SQL_USERNAME,SQL_PASSWORD,SQL_DBNAME);
+// priprava dotazu
+$dotaz = $db->select('*') //
+    ->from('investice')//
+    ->orderBy('id');
+
+// priprava strankovani
+$limit = 10;
+$pager = new pager($limit);
+$pager->count = $dotaz->match(true); // spocitani celkoveho poctu polozek
+
+// pridat limit do dotazu
+$dotaz->limit($pager->offset(), $limit);
+
+// vypis polozek
+$vysledek = $dotaz->exec();
+                          
+                     echo "<table id=\"news-table\">
+                                  <tbody><tr>
+                                      <th class=\"date-invest\">Datum a čas</th>
+                                      <th class=\"name-invest\">Název investice</th>
+                                      <th class=\"kategory-invest\">Kategorie</th>
+                                      <th class=\"annotation-invest\">Krátký popis (anotace)</th>
+                                      <th class=\"action-invest\">Akce</th>
+                                  </tr>";
+while($radek = $vysledek->row()) {                     
+  echo "<tr class=\"table-hover\">\n";
+  echo "<td class=\"date-invest\">".$radek['datum']."</td>\n"; // 
+  echo "<td class=\"name-invest\">".$radek['nazev-novinky']."</td>\n"; // 
+  echo "<td class=\"kategory-invest\">\n"; // 
+  echo "<td class=\"annotation-invest\">".$radek['kratky-popis']."</td>\n"; // 
+  echo "<td class=\"action-invest\"><a title=\"Upravit investici\" href=\"index.php?page=investice-edit&amp;id=".$radek['id']."\"><img width=\"25\" height=\"25\" alt=\"Upravit investici\" src=\"imgs/edit-icon.gif\"></a><a title=\"Smazat investici\" href=\"index.php?page=investice-del&amp;id=".$radek['id']."\"><img width=\"25\" height=\"25\" alt=\"Smazat investici\" src=\"imgs/delete-icon.gif\"></a></td>\n"; // 
+  echo "</tr>\n"; 
+} 
+echo "</tbody></table>\n";
+echo "<br />";
+echo "<br />";
+echo $pager->pages(); ?>       
+                                   
+                              <a title="Vytvoření nové investice" href="index.php?page=investice-nova-strana" class="btn-red-white">Nová investice</a>
+                  </div>
+
+              <div class="clear"></div> 

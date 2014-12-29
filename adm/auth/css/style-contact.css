@@ -1,0 +1,110 @@
+/* CONTACT FORM  */
+
+form#contact-form {
+    display: block;
+    float: left;
+    margin: 20px 0px 30px 0px;
+    width: 544px;
+    padding: 10px 29px 15px 29px;
+    background: #efefef;
+}
+
+form#contact-form fieldset.contact-form-left, form#contact-form fieldset.contact-form-right {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+
+form#contact-form fieldset.contact-form-left {float: left; width: 262px;} 
+form#contact-form fieldset.contact-form-right {float: right; width: 262px;}
+form#contact-form fieldset.contact-form-left-right {float: left; width: 544px;}
+
+form#contact-form label {
+    display: block;
+    float: left;
+    margin: 11px 0px 5px 0px;
+}
+
+form#contact-form fieldset.contact-form-left input.text, form#contact-form fieldset.contact-form-right input.text {
+    display: block;
+    
+    width: 252px;
+    padding: 2px 4px;
+    margin: 0px;
+    border: 1px solid #d2d2d2;
+    outline: none;
+}
+
+form#contact-form textarea {
+    display: block;
+    width: 534px;
+    height: 132px;
+    border: 1px solid #d2d2d2;
+    margin: 0px 0px 15px 0px;
+    outline: none;
+    padding: 2px 4px;
+    font-family: "Tahoma", Arial CE, Verdana, Helvetica, Geneva;
+    font-size: 1em;
+    line-height: 1.7em;
+}
+
+form#contact-form p {
+    display: block;
+    float: left;
+    padding: 0px;
+    margin: 0px 0px 0px 0px;
+    width: 544px;
+}
+
+form#contact-form p input {
+    float: right;
+    width: 111px;
+    height: 32px;
+    background: url("../imgs/bg-btn_form.gif") no-repeat 0px 0px;
+    border: none;
+    font-size: 1.1em;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+form#contact-form p input:hover {background-position: 0px -32px;}
+
+form#contact-form span.info {
+    display: block;
+    padding: 10px 0px;
+}
+
+
+
+.red {color: #df0808;}
+
+a.mailto {color: #CC0202;}
+a.mailto:hover {color: #181818;}
+
+div#contact-map {
+    display: block;
+    float: left;
+    width: 602px;
+    height: 280px;
+    margin: 10px 0px 0px 0px;
+}
+
+div#map strong {color: #CC0202; font-size: 1.1em;}
+
+div#address {
+    display: block;
+    float: left;
+    width: 602px;
+    padding: 10px 0px 5px 0px;
+}
+
+div#address p {
+    display: block;
+    float: left;
+    width: 200px;
+}
+
+div#address p strong {font-size: 1.2em; padding: 0px 0px 5px 0px;}
+div#address p span {font-size: 1.2em; padding: 7px 0px 2px 0px; color: #3f85a0;}
+div#address p a {color: #df0808;}
+div#address p a:hover {color: #000000;}
