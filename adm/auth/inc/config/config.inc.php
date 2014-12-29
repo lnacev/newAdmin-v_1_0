@@ -1,8 +1,8 @@
 <?php 
-define("SQL_HOST","31.31.77.167");
-define("SQL_DBNAME","c1serialy"); /* *** change on prod db name *** */
-define("SQL_USERNAME","c1serialy"); /* *** change on prod db username *** */
-define("SQL_PASSWORD","pwdserialy10"); /* *** change on prod password *** */
+define("SQL_HOST","localhost"); /* *** change on prod ip or localhost *** */
+define("SQL_DBNAME","*****"); /* *** change on prod db name *** */
+define("SQL_USERNAME","*****"); /* *** change on prod db username *** */
+define("SQL_PASSWORD","*****"); /* *** change on prod password *** */
 //
 require_once "db_conn.inc.php";
 require_once('dbplibc.inc.php');
